@@ -10,23 +10,25 @@
 <ion-content [fullscreen]="true">
   <ion-card>
     
-    <form>
+    <form >
+      <div class="img" >
+        <ion-item >
+          <ion-label position="stacked"></ion-label>
+          <input class="arquivo" type="file" id="file" accept="image/*" required >
+          <label for="file"><ion-icon class="icone" name="images"></ion-icon>Selecione uma Imagem</label>
+        </ion-item>
+      </div>  
+      <div class="input">
       <ion-item>
         <ion-label position="floating">Título da Postagem</ion-label>
         <ion-input type="text" name="title" required></ion-input>
       </ion-item>
-
       <ion-item>
         <ion-label position="floating">Texto da Postagem</ion-label>
         <ion-textarea name="text" rows="5" required></ion-textarea>
       </ion-item>
-
-      <ion-item>
-        <ion-label position="stacked">Selecione uma Imagem</ion-label>
-        <input type="file" accept="image/*" required>
-      </ion-item>
-
-      <ion-button type="submit" expand="full">Enviar Postagem</ion-button>
+    </div>
+      <ion-button shape="round" type="submit">Enviar Postagem <ion-icon slot="end" name="send"></ion-icon> </ion-button>
     </form>
   </ion-card>
 
