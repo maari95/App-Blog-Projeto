@@ -6,7 +6,6 @@ ion-card-header, ion-card{
     background:none;
 }
 ion-card{
-    border: 1.5px;
-    border-style:solid;
-    border-color: white;
+  transform: translateY(40%);
+    border: 1.5px solid white;
 }

@@ -1,38 +1,39 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="tertiary">
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-     <ion-title>Nova Postagem</ion-title>
+    <ion-title>Nova Postagem</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-card>
-    <ion-card-header></ion-card-header>
-   <form>
-    <!-- <form (ngSubmit)="submitForm()"> -->
-    <ion-item>
-      <ion-label position="floating">Título da Postagem</ion-label>
-      <ion-input type="text" name="title" required></ion-input>
-      <!-- <ion-input type="text" [(ngModel)]="post.title" name="title" required></ion-input> -->
-    </ion-item>
+    
+    <form>
+      <ion-item>
+        <ion-label position="floating">Título da Postagem</ion-label>
+        <ion-input type="text" name="title" required></ion-input>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="floating">Texto da Postagem</ion-label>
-      <ion-textarea name="text" rows="5" required></ion-textarea>
-      <!-- <ion-textarea [(ngModel)]="post.text" name="text" rows="5" required></ion-textarea> -->
-    </ion-item>
+      <ion-item>
+        <ion-label position="floating">Texto da Postagem</ion-label>
+        <ion-textarea name="text" rows="5" required></ion-textarea>
+      </ion-item>
 
-    <ion-item>
-      <ion-label position="stacked">Selecione uma Imagem</ion-label>
-      <!-- <input type="file" (change)="onFileSelected($event)" accept="image/*" required> -->
-      <input type="file" accept="image/*" required>
-    </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Selecione uma Imagem</ion-label>
+        <input type="file" accept="image/*" required>
+      </ion-item>
 
-    <ion-button type="submit" expand="full">Enviar Postagem</ion-button>
-  </form>
-  </ion-card> 
+      <ion-button type="submit" expand="full">Enviar Postagem</ion-button>
+    </form>
+  </ion-card>
 
- </ion-content>
+</ion-content>
 
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-title>Footer</ion-title>
+  </ion-toolbar>
+</ion-footer>
