@@ -10,6 +10,9 @@
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
 }
 
 .txt {
@@ -18,11 +21,20 @@
   box-sizing: border-box;
 }
 
+.txt p{
+  width: 100%;
+  text-align: center;
+}
+
 .main button {
   width: 100%;
   height: 30px;
   background-color: var(--ion-color-primary);
   color: aliceblue;
+}
+
+.main button:hover{
+  background-color: var(--ion-color-primary-tint);
 }
 
 .card-group {
@@ -63,4 +75,77 @@
   position: absolute;
   bottom: 0px;
   text-align: center;
+}
+
+@media(min-width:900px){
+
+  .main {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+  }
+
+  .txt {
+    width: 100%;
+    padding: 0px 10px;
+    box-sizing: border-box;
+  }
+
+  .txt p{
+    width: 100%;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .main button {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    background-color: var(--ion-color-primary);
+    color: aliceblue;
+  }
+
+  .main button:hover{
+    background-color: var(--ion-color-primary-tint);
+  }
+
+  .card-item {
+    position: relative;
+    margin:20px 3%;
+    width: 25%;
+    height: 110px;
+    padding: 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .item {
+    background-color: white;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    left: 50%;
+    top: -25px;
+    transform: translateX(-50%);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+
+  .tt {
+    padding: 0;
+    width: 100%;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+  }
+
+  .item i{
+    font-size: 34px;
+  }
 }
