@@ -15,9 +15,7 @@ import { configuracao } from 'src/environments/configuracao';
 
 
 @NgModule({
-  declarations: [AppComponent,
-    
-  ],
+  declarations: [AppComponent],
   imports: [BrowserModule, 
     IonicModule.forRoot(), 
     AppRoutingModule, 
