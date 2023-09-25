@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from 'src/environments/auth.guard';
 
 const routes: Routes = [
   {
@@ -27,7 +28,8 @@ const routes: Routes = [
   },
   {
     path: 'envio-post',
-    loadChildren: () => import('./page/envio-post/envio-post.module').then( m => m.EnvioPostPageModule)
+    loadChildren: () => import('./page/envio-post/envio-post.module').then( m => m.EnvioPostPageModule),
+    canActivate: [AuthGuard] 
   },
   {
     path: 'sobre',
@@ -36,7 +38,8 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./page/login/login.module').then( m => m.LoginPageModule)
-  },   {
+  },   
+  {
     path: 'cadastro',
     loadChildren: () => import('./page/cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 // import { TokenService } from 'src/app/model/token.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AuthService } from 'src/app/model/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginPage {
  senha: string='';
  mensagem: string=''; 
 
- constructor(private autenticar: AngularFireAuth, private router: Router){}
+ constructor(private autenticar: AngularFireAuth, private router: Router, private authService:AuthService){}
 
  async login(){
   try{
@@ -23,6 +24,7 @@ export class LoginPage {
       this.senha
     );
     if (userCredential.user){
+      this.authService.login;
       this.router.navigateByUrl('/home');
     }
   }catch(error){
