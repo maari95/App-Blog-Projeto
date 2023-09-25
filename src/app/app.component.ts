@@ -11,7 +11,7 @@ export class AppComponent {
     { title: 'Nova postagem', url: 'envio-post', icon: 'add' },
     { title: 'Contato', url: 'contact', icon: 'chatbox-ellipses' },
     { title: 'Sobre', url: 'sobre', icon: 'information' },
-    { title: 'Login', url: 'login', icon: 'person' },
+
     
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
