@@ -1,9 +1,7 @@
-
 <ion-header>
   <ion-toolbar>
     <ion-title>Cadastro</ion-title>
-    <ion-back-button>
-    </ion-back-button>
+    <ion-menu-button color="light"></ion-menu-button>
   </ion-toolbar>
 </ion-header>
 
@@ -20,7 +18,7 @@
     </ion-item>
   </ion-list>
 
-  <ion-button expand="full" (click)="registrar()">Registrar</ion-button>
+  <ion-button expand="full" (click)="registrar()">Cadastrar</ion-button>
 
   <ion-text color="danger" *ngIf="mensagem">{{ mensagem }}</ion-text>
 </ion-content>
