@@ -25,9 +25,9 @@
           <ion-input type="password" [(ngModel)]="senha"></ion-input>
         </ion-item>
         <ion-button expand="full" color="primary" (click)="login()">Entrar</ion-button>
-        <p *ngIf="mensagem">{{mensagem}}</p>
 
         <ion-button expand="full" color="secondary" [routerLink]="['/cadastro']">Cadastre-se</ion-button>
+        <p *ngIf="mensagem">{{mensagem}}</p>
       </ion-card-content>
     </ion-card>
   </div>
