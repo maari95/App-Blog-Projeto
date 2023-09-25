@@ -13,6 +13,6 @@ export class AppComponent {
     { title: 'Login', url: 'login', icon: 'person' },
 
   ];
- 
+ /*  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders']; */
   constructor() {}
 }
