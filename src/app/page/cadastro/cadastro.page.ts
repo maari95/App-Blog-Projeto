@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastroService } from 'src/app/model/cadastro.service';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular'; 
+import { ToastController, ActionSheetController } from '@ionic/angular'; 
 
 @Component({
   selector: 'app-cadastro',
@@ -14,7 +14,7 @@ export class CadastroPage implements OnInit {
   senha: string = '';
   mensagem: string = '';
 
-  constructor(private service: CadastroService, private router: Router, private toastController: ToastController) { }
+  constructor(private service: CadastroService, private router: Router, private toastController: ToastController, private ActionSheetCtrl: ActionSheetController) { }
 
   ngOnInit() {
   }
@@ -43,4 +43,6 @@ export class CadastroPage implements OnInit {
     });
     toast.present();
   }
+
+  
 }
