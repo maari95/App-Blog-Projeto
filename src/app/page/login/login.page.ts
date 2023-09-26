@@ -13,7 +13,7 @@ import { AuthService } from 'src/app/model/auth.service';
 export class LoginPage {
  email: string='';
  senha: string='';
- mensagem: string=''; 
+ mensagem: string='';
 
  constructor(private autenticar: AngularFireAuth, private router: Router, private authService:AuthService){}
 
@@ -24,7 +24,7 @@ export class LoginPage {
       this.senha
     );
     if (userCredential.user){
-      this.authService.login;
+      this.authService.login();
       this.router.navigateByUrl('/home');
     }
   }catch(error){
