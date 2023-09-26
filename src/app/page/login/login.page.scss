@@ -69,35 +69,15 @@ ion-button {
   border-radius: 20px;
 }
 
-@media(min-width:900px) {
-  login-container {
-    width: 70%;
-    margin-left: 50%;
-    transform: translate(-50%);
-  }
-  p{
-    margin: 20px;
-    color: aliceblue;
-    font-size: 2vw;
-  }
 
-  ion-item {
-    font-size: 20px;
-  }
 
-  ion-button {
-    font-size: 20px;
-  }
-}
-ion-card-title{
-  margin-top:1.5rem;
-  text-align: center;
-}
-
-@media(min-width:1080px){
+@media(min-width:900px){
   .login-container{
     width: 600px;
     margin-left: 50%;
     transform: translateX(-50%);
+  }
+  p{
+    font-size: 3vw;
   }
 }
