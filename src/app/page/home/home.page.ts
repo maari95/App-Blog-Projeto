@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -8,8 +9,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class HomePage implements OnInit {
 
   @ViewChild('carouselContent', { static: true }) carouselContent!: ElementRef;
-
-  constructor() { }
+  constructor(){ }
 
   ngOnInit() {
     // Movendo o carrossel a cada 3 segundos
@@ -31,4 +31,5 @@ export class HomePage implements OnInit {
       }, 50);
     }, 500);
   }
+
 }
