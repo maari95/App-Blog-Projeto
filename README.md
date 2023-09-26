@@ -1,4 +1,6 @@
-#  Aplicativo Blog Projeto Final   <img src="https://cdn1.iconfinder.com/data/icons/social-media-2057/128/1-21-256.png" width="30px" height="30px">
+#  <img src="https://cdn-icons-png.flaticon.com/512/2036/2036963.png" width="40px" height="40px"> Aplicativo Blog Projeto Final  
+
+
           
 
 Projeto final  em IONIC - Aplicativo Mobile 
@@ -14,7 +16,7 @@ Equipe de Projeto:
 
 #
 
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original-wordmark.svg" width="150px" height="100px"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" width="150px" height="80px"/><img src="https://kortkamp.dev/ts_logo.png" width="150px" height="80px">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" width="150px" height="80px"/><img src="https://kortkamp.dev/ts_logo.png" width="150px" height="80px"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original-wordmark.svg" width="150px" height="100px">
 
 #
 
