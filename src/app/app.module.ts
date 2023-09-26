@@ -13,7 +13,6 @@ import {FirestoreModule} from '@angular/fire/firestore';
 import { configuracao } from 'src/environments/configuracao';
 
 
-
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, 
