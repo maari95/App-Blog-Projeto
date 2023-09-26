@@ -4,21 +4,26 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  private isAuthenticated = false;
+  private readonly AUTH_KEY = 'authenticated'; // Chave para armazenar o estado de autenticação
 
-  constructor() {}
+  constructor() {
+    // Ao inicializar o serviço, verifique o armazenamento local para determinar o estado de autenticação atual
+    this.autenticado = localStorage.getItem(this.AUTH_KEY) === 'true';
+  }
+
+  private autenticado = false;
 
   login() {
-
-    this.isAuthenticated = true;
+    this.autenticado = true;
+    localStorage.setItem(this.AUTH_KEY, 'true'); // Salve o estado de autenticação no localStorage
   }
 
-  logout() {
-  
-    this.isAuthenticated = false;
+  sair() {
+    this.autenticado = false;
+    localStorage.setItem(this.AUTH_KEY, 'false'); // Atualize o estado de autenticação no localStorage
   }
 
-  getAuth(){
-    return this.isAuthenticated;
+  getAuth() {
+    return this.autenticado;
   }
 }
