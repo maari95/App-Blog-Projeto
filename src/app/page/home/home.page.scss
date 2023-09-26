@@ -32,6 +32,9 @@
 }
 
 .card {
+  border: solid 1px var(--ion-color-primary);
+  padding: 5px;
+  box-sizing: border-box;
   width: 40%;
   height: 25vw;
   margin: 5%;
