@@ -149,3 +149,9 @@
     font-size: 34px;
   }
 }
+
+@media(min-width:1080px){
+  .card-item{
+    width: 200px;
+  }
+}

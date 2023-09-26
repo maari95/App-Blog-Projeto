@@ -1,11 +1,10 @@
-login-container {
+.login-container {
   margin-top: 10rem;
-
 }
 
 ion-button {
   margin-top: 0.85rem;
-  
+
 }
 
 @media(min-width:900px) {
@@ -26,4 +25,12 @@ ion-button {
 ion-card-title{
   margin-top:1.5rem;
   text-align: center;
+}
+
+@media(min-width:1080px){
+  .login-container{
+    width: 600px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
 }
