@@ -1,10 +1,72 @@
-.login-container {
-  margin-top: 10rem;
+.background{
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(/assets/img/Backgorund\ login.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  justify-content: center;
 }
 
+.login-container {
+  margin-top: 4rem;
+}
+.card{
+  background: transparent;
+  backdrop-filter: blur(2rem);
+  box-shadow: 0 5px 10px var(--ion-color-primary);
+  border-radius: 30px;
+  text-align: center;
+  height: auto;
+  margin: 20px;
+}
+
+
+h1{
+  margin: 0;
+  color:aliceblue;
+  margin-bottom: 50px;
+}
+
+.logo{
+  width: 45%;
+  justify-content: center;
+  margin: 20px;
+  
+}
+.text{
+  width: 90%;
+  height: 70%;
+  border-radius: 30px;
+  background-color: aliceblue;
+  margin: 10px;
+  align-items: center;
+}
+.item{
+  padding-top: 20px;
+}
+input{
+  padding: 5px 30px;
+  margin-top: 5px;
+  border: none;
+  width: 100%;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.367);
+  outline: none;
+}
+p{
+  margin: 20px;
+  color: aliceblue;
+  font-size: 4.2vw;
+  max-width: 80%;
+}
+.button{
+  border-radius: 70px;
+  width: 40%;
+  display: fle;
+}
 ion-button {
   margin-top: 0.85rem;
-
+  border-radius: 20px;
 }
 
 @media(min-width:900px) {
@@ -12,6 +74,11 @@ ion-button {
     width: 70%;
     margin-left: 50%;
     transform: translate(-50%);
+  }
+  p{
+    margin: 20px;
+    color: aliceblue;
+    font-size: 2vw;
   }
 
   ion-item {
