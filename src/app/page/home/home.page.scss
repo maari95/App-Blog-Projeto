@@ -36,13 +36,13 @@
   padding: 5px;
   box-sizing: border-box;
   width: 40%;
-  height: 25vw;
+  height: 30vw;
   margin: 5%;
 }
 
 .card-img {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 25px);
 }
 
 .card-img img {
@@ -51,7 +51,11 @@
 }
 
 .card p {
-  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 25px;
 }
 
 .card-news {
