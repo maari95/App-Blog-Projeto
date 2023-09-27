@@ -19,10 +19,6 @@ const routes: Routes = [
     loadChildren: () => import('./page/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'postagens',
-    loadChildren: () => import('./page/postagens/postagens.module').then( m => m.PostagensPageModule)
-  },
-  {
     path: 'contact',
     loadChildren: () => import('./page/contact/contact.module').then( m => m.ContactPageModule)
   },
