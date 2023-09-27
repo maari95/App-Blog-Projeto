@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Platform } from '@ionic/angular';
+
 
 
 
@@ -10,7 +10,7 @@ import { Platform } from '@ionic/angular';
 })
 export class EnvioPostPage implements OnInit {
 
-  constructor(private platform: Platform, private file: File) { }
+  constructor() { }
 
   ngOnInit() {
   }

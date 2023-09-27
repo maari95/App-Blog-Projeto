@@ -4,6 +4,5 @@ export const configuracao={
   projectId: "loginblog-fc4cf",
   storageBucket: "loginblog-fc4cf.appspot.com",
   messagingSenderId: "337675349772",
-  appId: "1:337675349772:web:bf25e891c303ceaa696329"
-
+  appId: "1:337675349772:web:bf25e891c303ceaa696329",
 }
