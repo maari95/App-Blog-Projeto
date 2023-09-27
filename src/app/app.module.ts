@@ -11,6 +11,7 @@ import {AngularFireModule} from '@angular/fire/compat';
 import {FirestoreModule} from '@angular/fire/firestore';
 
 import { configuracao } from 'src/environments/configuracao';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -21,6 +22,7 @@ import { configuracao } from 'src/environments/configuracao';
     AppRoutingModule, 
     AngularFireModule.initializeApp(configuracao),
     FirestoreModule,
+    HttpClientModule
 
   ],
 
