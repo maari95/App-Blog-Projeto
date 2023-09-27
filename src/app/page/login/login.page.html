@@ -1,33 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="primary" >
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button color="dark"></ion-menu-button>
+      <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="background">
-  <div class="login-container">
-    <ion-card class="card">
+    <div class="login-container">
+      <ion-card class="card">
         <img class="logo" src=" assets/icon/Blog post-amico.svg" alt="">
         <h1>Login</h1>
-      <ion-card-content class="text" style="margin-left: 50%;transform: translate(-50%);">
-        <div class="item">
-          <input class="input" type="email" [(ngModel)]="email" placeholder="email">
-        </div>
-        <div class="item">
-          <input class="input" type="password" [(ngModel)]="senha" placeholder="senha">
-        </div>
-        <ion-button class="button" (click)="login()">Entrar</ion-button>
-      </ion-card-content>
-      <p>Não possui uma conta?<a [routerLink]="['/cadastro']"> Cadastre-se</a> </p>
-      <!--         <ion-button class="button" expand="full" color="secondary" >Cadastre-se</ion-button> -->
-              <p *ngIf="mensagem">{{mensagem}}</p>
-      
-    </ion-card>
+        <ion-card-content class="text" style="margin-left: 50%;transform: translate(-50%);">
+          <div class="item">
+            <input class="input" type="email" [(ngModel)]="email" placeholder="email">
+          </div>
+          <div class="item">
+            <input class="input" type="password" [(ngModel)]="senha" placeholder="senha">
+          </div>
+          <ion-button class="button" (click)="login()">Entrar</ion-button>
+        </ion-card-content>
+        <p>Não possui uma conta?<a [routerLink]="['/cadastro']"> Cadastre-se</a> </p>
+        <p *ngIf="mensagem">{{mensagem}}</p>
+      </ion-card>
+    </div>
   </div>
-</div>
 </ion-content>
-
