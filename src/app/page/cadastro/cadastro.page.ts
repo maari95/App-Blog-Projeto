@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastroService } from 'src/app/model/cadastro.service';
 import { Router } from '@angular/router';
-import { ToastController, ActionSheetController } from '@ionic/angular'; 
+import { ToastController, ActionSheetController } from '@ionic/angular';
 
 
 @Component({
@@ -11,7 +11,8 @@ import { ToastController, ActionSheetController } from '@ionic/angular';
 })
 export class CadastroPage implements OnInit {
 
- 
+
+
   email: string = '';
   senha: string = '';
   mensagem: string = '';
@@ -21,7 +22,10 @@ export class CadastroPage implements OnInit {
   ngOnInit() {
   }
 
+
   
+
+
   async registrar() {
     if (this.email && this.senha) {
       try {
@@ -44,11 +48,10 @@ export class CadastroPage implements OnInit {
     const toast = await this.toastController.create({
       message: mensagem,
       duration: 2000,
-      position: 'bottom' 
+      position: 'bottom'
     });
     toast.present();
   }
 
 
-  
 }

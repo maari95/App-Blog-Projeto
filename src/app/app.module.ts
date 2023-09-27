@@ -14,6 +14,7 @@ import { configuracao } from 'src/environments/configuracao';
 
 
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, 
@@ -21,6 +22,7 @@ import { configuracao } from 'src/environments/configuracao';
     AppRoutingModule, 
     AngularFireModule.initializeApp(configuracao),
     FirestoreModule,
+ 
 
   ],
 

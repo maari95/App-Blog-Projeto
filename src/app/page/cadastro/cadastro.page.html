@@ -1,38 +1,33 @@
-<ion-header >
+
+<ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button color="dark"></ion-menu-button>
+      <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Cadastro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
-<ion-content lass="ion-padding">
-  <div class="login-container">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Cadastro de Usuário</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-  <ion-list>
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input [(ngModel)]="email" type="email"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="floating">Senha</ion-label>
-      <ion-input [(ngModel)]="senha" type="password"></ion-input>
-    </ion-item>
-  </ion-list>
-
-  <ion-button expand="full" (click)="registrar()">Cadastrar</ion-button>
-   <ion-text color="danger" *ngIf="mensagem">{{ mensagem }}</ion-text><br>
-       <a routerLink="/login">Já possui conta? Faça login</a>
-  
-</ion-card-content>
-</ion-card>
-</div>
+<ion-content fullsc>
+  <div class="background">
+    <div class="login-container">
+      <ion-card class="card">
+        <img class="logo" src=" assets/icon/Blog post-amico.svg" alt="">
+        <h1>cadastro</h1>
+        <ion-card-content class="text" style="margin-left: 50%;transform: translate(-50%);">
+          <!-- <div class="item">
+            <input [(ngModel)]="nome" placeholder="Nome" type="text">
+          </div> -->
+          <div class="item">
+            <input class="input" type="email" [(ngModel)]="email" placeholder="Email">
+          </div>
+          <div class="item">
+            <input class="input" type="password" [(ngModel)]="senha" placeholder="Senha">
+          </div>
+          <ion-button class="button" (click)="registrar()">Cadastrar-se</ion-button>
+        </ion-card-content>
+        <p>Já possui uma conta?<a [routerLink]="['/login']">Conecte-se</a> </p>
+        <p *ngIf="mensagem">{{mensagem}}</p>
+      </ion-card>
+    </div>
+  </div>
 </ion-content>
-
