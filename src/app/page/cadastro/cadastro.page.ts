@@ -3,6 +3,7 @@ import { CadastroService } from 'src/app/model/cadastro.service';
 import { Router } from '@angular/router';
 import { ToastController, ActionSheetController } from '@ionic/angular'; 
 
+
 @Component({
   selector: 'app-cadastro',
   templateUrl: './cadastro.page.html',
@@ -10,22 +11,25 @@ import { ToastController, ActionSheetController } from '@ionic/angular';
 })
 export class CadastroPage implements OnInit {
 
+ 
   email: string = '';
   senha: string = '';
   mensagem: string = '';
 
-  constructor(private service: CadastroService, private router: Router, private toastController: ToastController, private ActionSheetCtrl: ActionSheetController) { }
+  constructor(private service: CadastroService, private router: Router, private toastController: ToastController, private ActionSheetCtrl: ActionSheetController,) { }
 
   ngOnInit() {
   }
 
-  async registrar() { 
+  
+  async registrar() {
     if (this.email && this.senha) {
       try {
         const result = await this.service.cadastrar(this.email, this.senha);
+  
         console.log('Usuário Cadastrado', result.user);
         this.mostrarToast('Cadastro realizado com sucesso');
-        this.router.navigate(['/login']); 
+        this.router.navigate(['/login']);
       } catch (error) {
         console.error('Erro ao cadastrar usuário', error);
         this.mostrarToast('Erro ao cadastrar usuário');
@@ -34,6 +38,7 @@ export class CadastroPage implements OnInit {
       this.mostrarToast('Preencha todos os campos');
     }
   }
+  
 
   async mostrarToast(mensagem: string) {
     const toast = await this.toastController.create({
@@ -43,6 +48,7 @@ export class CadastroPage implements OnInit {
     });
     toast.present();
   }
+
 
   
 }
