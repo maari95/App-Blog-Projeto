@@ -63,9 +63,9 @@ p{
   max-width: 80%;
 }
 .button{
+  margin-top: 20px;
   border-radius: 70px;
   width: 40%;
-  display: fle;
 }
 
 ion-button {
@@ -73,7 +73,9 @@ ion-button {
   border-radius: 20px;
 }
 
-
+a{
+  color: var(--ion-color-danger);
+}
 
 @media(min-width:900px){
 

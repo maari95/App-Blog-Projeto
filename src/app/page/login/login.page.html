@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button color="light"></ion-menu-button>
@@ -14,10 +14,10 @@
         <h1>Login</h1>
         <ion-card-content class="text" style="margin-left: 50%;transform: translate(-50%);">
           <div class="item">
-            <input class="input" type="email" [(ngModel)]="email" placeholder="email">
+            <input class="input" type="email" [(ngModel)]="email" placeholder="Email">
           </div>
           <div class="item">
-            <input class="input" type="password" [(ngModel)]="senha" placeholder="senha">
+            <input class="input" type="password" [(ngModel)]="senha" placeholder="Senha">
           </div>
           <ion-button class="button" (click)="login()">Entrar</ion-button>
         </ion-card-content>
