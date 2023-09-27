@@ -11,6 +11,7 @@
 .login-container {
   margin-top: 4rem;
 }
+
 .card{
   background: transparent;
   backdrop-filter: blur(2rem);
@@ -42,9 +43,11 @@ h1{
   margin: 10px;
   align-items: center;
 }
+
 .item{
   padding-top: 20px;
 }
+
 input{
   padding: 5px 30px;
   margin-top: 5px;
@@ -60,23 +63,28 @@ p{
   max-width: 80%;
 }
 .button{
+  margin-top: 20px;
   border-radius: 70px;
   width: 40%;
-  display: fle;
 }
+
 ion-button {
   margin-top: 0.85rem;
   border-radius: 20px;
 }
 
-
+a{
+  color: var(--ion-color-danger);
+}
 
 @media(min-width:900px){
+
   .login-container{
     width: 600px;
     margin-left: 50%;
     transform: translateX(-50%);
   }
+
   p{
     font-size: 3vw;
   }

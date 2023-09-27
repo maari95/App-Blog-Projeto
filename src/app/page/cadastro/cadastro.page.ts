@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastroService } from 'src/app/model/cadastro.service';
 import { Router } from '@angular/router';
-import { ToastController, ActionSheetController } from '@ionic/angular'; 
+import { ToastController, ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cadastro',
@@ -10,6 +10,7 @@ import { ToastController, ActionSheetController } from '@ionic/angular';
 })
 export class CadastroPage implements OnInit {
 
+  nome: string = '';
   email: string = '';
   senha: string = '';
   mensagem: string = '';
@@ -19,13 +20,13 @@ export class CadastroPage implements OnInit {
   ngOnInit() {
   }
 
-  async registrar() { 
+  async registrar() {
     if (this.email && this.senha) {
       try {
         const result = await this.service.cadastrar(this.email, this.senha);
         console.log('Usuário Cadastrado', result.user);
         this.mostrarToast('Cadastro realizado com sucesso');
-        this.router.navigate(['/login']); 
+        this.router.navigate(['/login']);
       } catch (error) {
         console.error('Erro ao cadastrar usuário', error);
         this.mostrarToast('Erro ao cadastrar usuário');
@@ -39,10 +40,10 @@ export class CadastroPage implements OnInit {
     const toast = await this.toastController.create({
       message: mensagem,
       duration: 2000,
-      position: 'bottom' 
+      position: 'bottom'
     });
     toast.present();
   }
 
-  
+
 }
