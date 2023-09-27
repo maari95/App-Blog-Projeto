@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CadastroService } from 'src/app/model/cadastro.service';
 import { Router } from '@angular/router';
 import { ToastController, ActionSheetController } from '@ionic/angular';
-
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-cadastro',
@@ -11,19 +12,17 @@ import { ToastController, ActionSheetController } from '@ionic/angular';
 })
 export class CadastroPage implements OnInit {
 
+  
 
-
+  nome:string='';
   email: string = '';
   senha: string = '';
   mensagem: string = '';
 
-  constructor(private service: CadastroService, private router: Router, private toastController: ToastController, private ActionSheetCtrl: ActionSheetController,) { }
+  constructor(private service: CadastroService, private router: Router, private toastController: ToastController, private ActionSheetCtrl: ActionSheetController,private firedata: AngularFireDatabase ) { }
 
   ngOnInit() {
   }
-
-
-  
 
 
   async registrar() {
@@ -53,5 +52,10 @@ export class CadastroPage implements OnInit {
     toast.present();
   }
 
+  salvarNomeUsuario(){
+    if(this.nome.trim() !== ''){
+      localStorage.setItem('user', this.nome);
+    }
+  }
 
 }
