@@ -33,7 +33,7 @@ h1{
   width: 45%;
   justify-content: center;
   margin: 20px;
-  
+
 }
 .text{
   width: 90%;
@@ -55,6 +55,7 @@ input{
   width: 100%;
   border-bottom: solid 1px rgba(0, 0, 0, 0.367);
   outline: none;
+  background: none;
 }
 p{
   margin: 20px;
@@ -86,6 +87,6 @@ a{
   }
 
   p{
-    font-size: 3vw;
+    font-size: 20px;
   }
 }
