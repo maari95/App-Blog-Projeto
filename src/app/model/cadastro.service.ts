@@ -28,4 +28,11 @@ export class CadastroService {
     localStorage.removeItem('expiracao')
     return this.fireAuth.signOut();
   }
+
+  setUser(user: string){
+    localStorage.setItem('user', user);
+  }
+  getUser(): string | null {
+    return localStorage.getItem('user');
+  }
 }

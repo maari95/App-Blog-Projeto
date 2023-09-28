@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button color="light"></ion-menu-button>
@@ -11,10 +11,9 @@
 
   <form>
     <div class="img">
-    <label for="file">
-      <i class='bx bxs-send' ></i>Selecione uma Imagem
-    </label></div>
-    <input class="arquivo" type="file" id="file" accept="image/*" required>
+      <input class="arquivo" type="file" id="file" accept="image/*" required>
+      <label for="file"><i class='bx bx-image-alt'></i>Selecione uma Imagem</label>
+    </div>
     <div class="input">
       <ion-item>
         <ion-label position="floating">Título da Postagem</ion-label>
@@ -25,14 +24,11 @@
         <ion-textarea name="text" rows="5" required></ion-textarea>
       </ion-item>
     </div>
-    <button class="enviar" shape="round" type="submit">Enviar Postagem <ion-icon slot="end" name="send"></ion-icon>
-    </button>
+
+    <!-- <button class="enviar" shape="round" type="submit">Enviar Postagem <ion-icon slot="end" name="send"></ion-icon>
+    </button> -->
+
+    <button class="enviar">Enviar Postagem <i class='bx bxs-send'></i></button>
   </form>
 
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar color="primary">
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>

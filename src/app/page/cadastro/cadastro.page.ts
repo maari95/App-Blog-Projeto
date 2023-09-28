@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastroService } from 'src/app/model/cadastro.service';
 import { Router } from '@angular/router';
-import { ToastController } from '@ionic/angular'; 
+import { ToastController, ActionSheetController } from '@ionic/angular';
+import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-cadastro',
@@ -10,22 +12,27 @@ import { ToastController } from '@ionic/angular';
 })
 export class CadastroPage implements OnInit {
 
+  
+
+  nome:string='';
   email: string = '';
   senha: string = '';
   mensagem: string = '';
 
-  constructor(private service: CadastroService, private router: Router, private toastController: ToastController) { }
+  constructor(private service: CadastroService, private router: Router, private toastController: ToastController, private ActionSheetCtrl: ActionSheetController,private firedata: AngularFireDatabase ) { }
 
   ngOnInit() {
   }
 
-  async registrar() { 
+
+  async registrar() {
     if (this.email && this.senha) {
       try {
         const result = await this.service.cadastrar(this.email, this.senha);
+  
         console.log('Usuário Cadastrado', result.user);
         this.mostrarToast('Cadastro realizado com sucesso');
-        this.router.navigate(['/login']); 
+        this.router.navigate(['/login']);
       } catch (error) {
         console.error('Erro ao cadastrar usuário', error);
         this.mostrarToast('Erro ao cadastrar usuário');
@@ -34,13 +41,21 @@ export class CadastroPage implements OnInit {
       this.mostrarToast('Preencha todos os campos');
     }
   }
+  
 
   async mostrarToast(mensagem: string) {
     const toast = await this.toastController.create({
       message: mensagem,
       duration: 2000,
-      position: 'bottom' 
+      position: 'bottom'
     });
     toast.present();
   }
+
+  salvarNomeUsuario(){
+    if(this.nome.trim() !== ''){
+      localStorage.setItem('user', this.nome);
+    }
+  }
+
 }

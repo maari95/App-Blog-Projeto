@@ -1,37 +1,29 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button color="dark"></ion-menu-button>
+      <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <div class="login-container">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Login</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item>
-          <ion-label position="floating">Email</ion-label>
-          <ion-input type="email" [(ngModel)]="email"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Senha</ion-label>
-          <ion-input type="password" [(ngModel)]="senha"></ion-input>
-        </ion-item>
-        <ion-button expand="full" color="primary" (click)="login()">Entrar</ion-button>
-
-        <ion-button expand="full" color="secondary" [routerLink]="['/cadastro']">Cadastre-se</ion-button>
+<ion-content>
+  <div class="background">
+    <div class="login-container">
+      <ion-card class="card">
+        <img class="logo" src=" assets/icon/Blog post-amico.svg" alt="">
+        <h1>Login</h1>
+        <ion-card-content class="text" style="margin-left: 50%;transform: translate(-50%);">
+          <div class="item">
+            <input class="input" type="email" [(ngModel)]="email" placeholder="Email">
+          </div>
+          <div class="item">
+            <input class="input" type="password" [(ngModel)]="senha" placeholder="Senha">
+          </div>
+          <ion-button class="button" (click)="login()">Entrar</ion-button>
+        </ion-card-content>
+        <p>Não possui uma conta?<a [routerLink]="['/cadastro']"> Cadastre-se</a> </p>
         <p *ngIf="mensagem">{{mensagem}}</p>
-      </ion-card-content>
-    </ion-card>
+      </ion-card>
+    </div>
   </div>
 </ion-content>
-
-<ion-footer>
-  <ion-toolbar color="primary">
-  </ion-toolbar>
-</ion-footer>

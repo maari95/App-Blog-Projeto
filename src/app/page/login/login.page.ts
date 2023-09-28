@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 // import { TokenService } from 'src/app/model/token.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AuthService } from 'src/app/model/auth.service';
+import { CadastroService } from 'src/app/model/cadastro.service';
 
 @Component({
   selector: 'app-login',
@@ -15,8 +16,10 @@ export class LoginPage {
  senha: string='';
  mensagem: string='';
 
- constructor(private autenticar: AngularFireAuth, private router: Router, private authService:AuthService){}
+ constructor(private autenticar: AngularFireAuth, private router: Router, private authService:AuthService,
+  private cadastro: CadastroService){}
 
+//  METODO DE LOGIN 
  async login(){
   try{
     const userCredential = await this.autenticar.signInWithEmailAndPassword(
@@ -30,6 +33,17 @@ export class LoginPage {
   }catch(error){
     console.error('Erro ao fazer login', error);
     this.mensagem='Erro ao fazer login';
+  }
+ }
+
+//  METODO PARA DESLOGAR
+ async logout(){
+  try{
+    this.autenticar.signOut();
+    this.cadastro.logout();
+    this.router.navigateByUrl('/login');
+  }catch(error){
+    console.error('Erro ao fazer logout', error);
   }
  }
 }

@@ -8,11 +8,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import {AngularFireModule} from '@angular/fire/compat';
-import {FirestoreModule} from '@angular/fire/firestore';
 
+import {FirestoreModule} from '@angular/fire/firestore';
 import { configuracao } from 'src/environments/configuracao';
 
 
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,7 +22,10 @@ import { configuracao } from 'src/environments/configuracao';
     AppRoutingModule, 
     AngularFireModule.initializeApp(configuracao),
     FirestoreModule,
-   
+
+    
+ 
+
 
   ],
 
