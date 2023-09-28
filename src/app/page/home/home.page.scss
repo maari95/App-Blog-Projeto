@@ -32,17 +32,29 @@
 }
 
 .card {
+  position: relative;
   border: solid 1px var(--ion-color-primary);
-  padding: 5px;
+  background-color: var(--ion-color-primary);
   box-sizing: border-box;
   width: 40%;
-  height: 30vw;
+  height: 130px;
   margin: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
 }
 
 .card-img {
-  width: 100%;
-  height: calc(100% - 25px);
+  top: 0;
+  z-index: 3;
+  box-sizing: border-box;
+  margin: 2px;
+  position: absolute;
+  width: calc(100% - 4px);
+  height: calc(100% - 29px);
+  transition: opacity 0.3s ease-in-out;
+
 }
 
 .card-img img {
@@ -50,12 +62,42 @@
   height: 100%;
 }
 
-.card p {
+.card .p {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
+  bottom: 0;
   margin: 0;
   height: 25px;
+  color: var(--ion-color-light);
+  background-color: var(--ion-color-primary);
+  border-top: solid 1px var(--ion-color-primary);
+  transition: opacity 0.3s ease-in-out;
+
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card:hover>.card-img {
+  opacity: 0;
+}
+
+.card:hover>.p {
+  opacity: 0;
+}
+
+.hr {
+  position: absolute;
+  z-index: 2;
+  font-size: 40px;
+  text-align: center;
+  color: var(--ion-color-light);
+  transition: opacity 0.3s ease-in-out;
 }
 
 .card-news {
@@ -110,21 +152,33 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .card {
+    position: relative;
     width: 40%;
     height: 200px;
-    margin: 5%;
+    margin: 2.5%;
   }
 
   .card-img {
+    position: absolute;
+    top:0;
     width: 100%;
     height: 100%;
   }
 
-  .card p {
-    margin: 5px;
+  .card .p {
+    position: absolute;
+    bottom: 0;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+  }
+
+  .card-img img{
+    width: 100%;
+    height: 100%;
   }
 
   .news {
@@ -140,6 +194,11 @@
     margin: 10px;
   }
 
+  .card-news img{
+    width: 100%;
+    height: 100%;
+  }
+
   .card-news span {
     position: absolute;
     top: 5px;
@@ -153,17 +212,68 @@
 @media (min-width:1080px) {
 
   .card {
+    position: relative;
     width: 40%;
     height: 20vw;
     margin: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--ion-color-primary);
+    transition: transform 0.3s ease-in-out;
   }
 
   .card-img {
+    z-index: 3;
+    position: absolute;
+    top:0;
+    width: calc(100% - 4px);
+    height: calc(100% - 29px);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+  }
+
+  .card-img img {
     width: 100%;
     height: 100%;
   }
 
-  .card-img img {
+  .card .p {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+  }
+
+  .hr {
+    position: absolute;
+    z-index: 2;
+    font-size: 40px;
+    text-align: center;
+    color: var(--ion-color-light);
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .card:hover {
+    transform: scale(1.01);
+  }
+
+  .card:hover>.card-img {
+    opacity: 0;
+  }
+
+  .card:hover>.p {
+    opacity: 0;
+  }
+
+  .card-news{
+    width: 40%;
+    margin: 2.5%;
+    height: 300px;
+  }
+
+  .card-news img{
     width: 100%;
     height: 100%;
   }
