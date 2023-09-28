@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import {AngularFireModule} from '@angular/fire/compat';
 
+
 import {FirestoreModule} from '@angular/fire/firestore';
 import { configuracao } from 'src/environments/configuracao';
 
@@ -22,11 +23,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     AppRoutingModule, 
     AngularFireModule.initializeApp(configuracao),
     FirestoreModule,
-
-    
- 
-
-
+    AngularFireDatabaseModule
   ],
 
   providers: [{ provide: RouteReuseStrategy, 
