@@ -22,8 +22,10 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     AppRoutingModule, 
     AngularFireModule.initializeApp(configuracao),
     FirestoreModule,
-    AngularFireDatabaseModule
+
+    
  
+
 
   ],
 
