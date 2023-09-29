@@ -30,7 +30,7 @@ export class AuthService {
     const encryptedValue = this.encrypt('false');
     localStorage.setItem(this.AUTH_KEY, encryptedValue); 
   }
-
+ 
   getAuth() {
     return this.autenticado;
   }
