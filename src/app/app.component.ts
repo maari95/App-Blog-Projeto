@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from './model/auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -14,5 +16,12 @@ export class AppComponent {
 
   ];
  /*  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders']; */
-  constructor() {}
+  constructor(private service: AuthService, private router: Router) {}
+
+
+sair(){
+  this.service.sair();
+  this.router.navigate(['/login']);
+}
+  
 }
