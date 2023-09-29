@@ -1,0 +1,29 @@
+ 
+  /* Personalize a resposta */
+  ion-item.expanded {
+    background-color: #f0f0f0; /* Cor de fundo da resposta expandida */
+    padding: 10px;
+    margin-top: 10px; /* Aumente a margem superior para um espaçamento melhor */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Adicione uma sombra sutil */
+  }
+  
+  /* Personalize o texto da resposta */
+  ion-item.expanded p {
+    font-size: 16px; /* Ajuste o tamanho da fonte da resposta conforme necessário */
+    color: #555; /* Cor do texto da resposta */
+  }
+/* Estilize a caixa de pergunta */
+ion-label {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+   
+    padding: 10px;
+    margin-bottom: 10px; /* Espaçamento entre as caixas de pergunta */
+  }
+
+
+  
+  
+  
