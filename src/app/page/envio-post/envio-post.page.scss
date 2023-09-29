@@ -19,6 +19,15 @@
   transform: translate(-50%);
 }
 
+.back-img{
+  z-index: -1;
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 
 .img i{
   margin-right: 10px;
@@ -39,6 +48,8 @@ form {
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 10px;
   box-sizing: border-box;
+  background-color: rgba(245, 245, 245, 0.774);
+  border-radius: 5px;
 }
 
 label{
