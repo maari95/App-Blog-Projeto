@@ -1,10 +1,4 @@
 <ion-header>
-
-  <head>
-
-    <script src="/src/assets/faq.js"></script>
-  </head>
-
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-menu-button color="light"></ion-menu-button>
@@ -18,18 +12,19 @@
     <ion-list>
       <ng-container *ngFor="let group of faqGroups">
         <ion-item-divider> 
-           <ion-label>{{ group.title }}</ion-label>
+          <ion-label style="font-size: 20px; margin-top: 25px;">{{ group.title }}</ion-label>
         </ion-item-divider>
       
         
           <ng-container *ngFor="let item of group.items">
             <ion-item (click)="toggleAnswer(item)">
               <ion-label >{{ item.question }}</ion-label>
+              <button class="icon"><i class='bx bx-chevron-down'></i></button>
             </ion-item>
            
-            <ion-item *ngIf="item.expanded">
-              <p>{{ item.answer }}</p>
-            </ion-item>
+            <div class="resposta" *ngIf="item.expanded">
+             <strong><p>{{ item.answer }}</p></strong>
+            </div>
           </ng-container>
         
       </ng-container>
