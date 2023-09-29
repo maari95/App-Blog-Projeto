@@ -1,0 +1,91 @@
+.container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container nav {
+    position: relative;
+    min-height: 50px;
+    height: 8vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container nav::after {
+    content: "";
+    background: rgb(255, 255, 255);
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 47px;
+    filter: blur(0.5px);
+}
+
+.container nav label {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    font-size: 3vw;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.background {
+    width: 100%;
+    display: flex;
+    background-color: var(--ion-color-tertiary);
+    padding-bottom: 10px;
+    color: aliceblue;
+}
+
+#fundamentos:checked ~ nav label .movel,
+#fundamentos:checked ~ nav label .fundamentos,
+#fundamentos:checked ~ nav label .privacidade,
+#fundamentos:checked ~ nav label .conta {
+    color: aliceblue;
+}
+
+input[type='radio'] {
+    display: none;
+}
+
+.container nav .slider {
+    position: absolute;
+    height: 4.5px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    width: 20%;
+    z-index: 1;
+    left: 0;
+    bottom: 0;
+    transition: all 0.3s ease;
+    filter: (blur 0.4px);
+}
+
+#fundamentos:checked ~ nav .slider{ left: 24%; width: 23%;}
+#privacidade:checked ~ nav .slider{ left: 53%;}
+#conta:checked ~ nav .slider{ left: 80%;}
+
+#movel:checked ~ nav .movel{
+    font-size: 3.2vw;
+} 
+#fundamentos:checked ~ nav .fundamentos{
+    font-size: 3.2vw;
+}
+#privacidade:checked nav .privacidade{
+    font-size: 3.2vw;
+}
+#conta:checked nav .conta{
+    font-size: 3.2vw;
+}
+
+

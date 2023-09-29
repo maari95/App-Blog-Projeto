@@ -3,11 +3,27 @@
     <ion-buttons slot="start">
       <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Pesquisar perguntas frequentes</ion-title>
+    <ion-title>Perguntas Frequentes</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content>
+  <div class="container">
+    <div class="background">
+    <input type="radio" name="slider" id="movel"checked>
+    <input type="radio" name="slider" id="fundamentos">
+    <input type="radio" name="slider" id="privacidade">
+    <input type="radio" name="slider" id="conta">
+      <nav>
+        <label for="movel" class="movel">Móvel</label>
+        <label for="fundamentos" class="fundamentos" >Fundamentos</label>
+        <label for="privacidade" class="privacidade"style="margin-left:20px">Privacidade</label>
+        <label for="conta" class="conta">Conta</label>
+        <div class="slider"></div>
+      </nav>
+    </div>
+
+  </div>
 
       <li><a class="" href="#movel">Móvel</a></li>
       <li><a class="" href="#fundamentos">Fundamentos</a></li>
