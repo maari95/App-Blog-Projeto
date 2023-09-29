@@ -18,10 +18,12 @@ export class AppComponent {
  /*  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders']; */
   constructor(private service: AuthService, private router: Router) {}
 
-
 sair(){
   this.service.sair();
   this.router.navigate(['/login']);
 }
-  
+
+getAuthService() {
+  return this.service.getAuth();
+}
 }
