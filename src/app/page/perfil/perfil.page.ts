@@ -19,7 +19,8 @@ export class PerfilPage implements OnInit {
     this.getNomes();
   }
   getNomes(): void{
-    this.service.getNome().subscribe((nomes)=>{
+
+   this.service.getNome().subscribe((nomes)=>{
       this.nomes = nomes;
     });
   }
@@ -33,6 +34,8 @@ export class PerfilPage implements OnInit {
 
 
   atualizarNome(nome: any): void {
+  /*   console.log(nome)
+    console.log(nome.id) */
    
     this.service.updateNome(nome.id, nome.nome, nome.bio, nome.email);
     this.validarCampo=false;
