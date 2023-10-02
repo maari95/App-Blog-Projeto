@@ -1,5 +1,5 @@
-.background{
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(/assets/img/Backgorund\ login.jpg);
+.background {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/img/Backgorund\ login.jpg);
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -10,7 +10,7 @@
   margin-top: 4rem;
 }
 
-.card{
+.card {
   background: transparent;
   backdrop-filter: blur(2rem);
   box-shadow: 0 5px 10px var(--ion-color-primary);
@@ -21,19 +21,20 @@
 }
 
 
-h1{
+h1 {
   margin: 0;
-  color:aliceblue;
+  color: aliceblue;
   margin-bottom: 50px;
 }
 
-.logo{
+.logo {
   width: 45%;
   justify-content: center;
   margin: 20px;
 
 }
-.text{
+
+.text {
   width: 90%;
   height: 70%;
   border-radius: 30px;
@@ -42,11 +43,11 @@ h1{
   align-items: center;
 }
 
-.item{
+.item {
   padding-top: 20px;
 }
 
-input{
+input {
   padding: 5px 30px;
   margin-top: 5px;
   border: none;
@@ -55,32 +56,43 @@ input{
   outline: none;
   background: none;
 }
-p{
+
+p {
   margin: 20px;
   color: aliceblue;
   font-size: 4.2vw;
   max-width: 80%;
 }
 
-.button{
+.button {
   margin-top: 20px;
   border-radius: 70px;
   width: 40%;
 }
 
-a{
+a {
   color: var(--ion-color-danger);
 }
 
-@media(min-width:900px){
+textarea {
+  border-radius: 10px;
+  resize: none;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 10px;
+  background: none;
+}
 
-  .login-container{
+@media(min-width:900px) {
+
+  .login-container {
     width: 600px;
     margin-left: 50%;
     transform: translateX(-50%);
   }
 
-  p{
+  p {
     font-size: 20px;
   }
 }
