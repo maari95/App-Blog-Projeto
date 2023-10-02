@@ -1,47 +1,32 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+  <img class="back-img" src="assets/img/fundo.gif" alt="wallpaper">
   <div class="container">
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>Meu perfil</ion-card-title>
-      </ion-card-header>
-      <ion-card-content *ngFor="let n of nomes"> 
-        <ion-list *ngIf="!n.editando">
-          <ion-item>
-            <ion-label>{{n.nome}}</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>{{n.bio}}</ion-label>
-          </ion-item>
-          <ion-item>
-            <ion-label>{{n.email}}</ion-label>
-          </ion-item>
-          <ion-item lines="none">
+      <h1>Meu perfil</h1>
+      <div class="content" *ngFor="let n of nomes">
+        <div class="lista" *ngIf="!n.editando">
+            <p class="linha">{{n.nome}}</p>
+            <p class="linha">{{n.bio}}</p>
+            <p class="linha">{{n.email}}</p>
             <ion-button fill="outline" size="default" (click)="n.editando = true">Alterar Dados</ion-button>
-          </ion-item>  
-        </ion-list>
-        <ion-list *ngIf="n.editando">
-          <ion-item>
-            <ion-label position="stacked">Nome</ion-label>
-            <ion-input [(ngModel)]="n.nome" name="nome"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="stacked">Bio</ion-label>
-            <ion-textarea [(ngModel)]="n.bio" name="bio" placeholder="Sobre você"></ion-textarea>
-          </ion-item>  
-          <ion-item>
-            <ion-label position="stacked">E-mail</ion-label>
-            <ion-input type="email" [(ngModel)]="n.email" name="email"></ion-input>
-          </ion-item>
-          <ion-item lines="none">
+        </div>
+        <div class="lista" *ngIf="n.editando">
+            <label for="nome">Nome</label>
+            <input id="nome" [(ngModel)]="n.nome" name="nome">
+            <label>Bio</label>
+            <textarea [(ngModel)]="n.bio" name="bio" placeholder="Sobre você"></textarea>
+            <label for="email">E-mail</label>
+            <input id="email" type="email" [(ngModel)]="n.email" name="email">
             <ion-button fill="outline" size="default" (click)="atualizarNome(n)">Salvar Alterações</ion-button>
-          </ion-item>
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
+        </div>
+      </div>
   </div>
 </ion-content>
