@@ -11,11 +11,11 @@ export class PerfilService {
   constructor(private db: AngularFireDatabase) { }
 
   getNome(): Observable<any>{
-    return this.db.list('dados').valueChanges();
+    return this.db.list('usuarios').valueChanges();
   }
   addNome(nome: any, bio: string, email: string): void{
     const id = uuidv4();
-    this.db.list('dados').set(id, { ...nome, id, bio, email});
+    this.db.list('usuarios').set(id, { ...nome, id, bio, email});
   }
   updateNome(id: string, nome: string, bio: string, email: string): void {
     const updateData = {
@@ -23,9 +23,9 @@ export class PerfilService {
       bio,
       email
     }
-    this.db.list('dados').update(id, updateData);
+    this.db.list('usuarios').update(id, updateData);
   }
   removeNome(id: string): void{
-    this.db.list('dados').remove(id);
+    this.db.list('usuarios').remove(id);
   }
 }
