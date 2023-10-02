@@ -13,7 +13,8 @@ export class AppComponent {
     { title: 'FAQ', url: 'contact', icon: 'chatbox-ellipses' },
     { title: 'Sobre', url: 'sobre', icon: 'information' },
     { title: 'Login', url: 'login', icon: 'person' },
-
+    { title: 'Perfil', url: 'perfil', icon: 'finger-print-outline' },
+    
   ];
  /*  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders']; */
   constructor(private service: AuthService, private router: Router) {}

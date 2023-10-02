@@ -39,6 +39,12 @@ const routes: Routes = [
     path: 'cadastro',
     loadChildren: () => import('./page/cadastro/cadastro.module').then( m => m.CadastroPageModule)
   },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./page/perfil/perfil.module').then( m => m.PerfilPageModule),
+    canActivate:[AuthGuard]
+  },
+
  
   
 ];
