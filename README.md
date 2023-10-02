@@ -7,7 +7,7 @@ Projeto final  em IONIC - Aplicativo Mobile
 
 
 Equipe de Projeto: 
-
+#### <a href="https://github.com/caiquebatalha"> Caique Batalha </a>
 #### <a href="https://github.com/Gxbriellp"> Gabriel Bernardo </a>
 #### <a href="https://github.com/Viera-JP"> João Pedro</a>
 #### <a href="https://github.com/maari95"> Marina Gomes</a>
