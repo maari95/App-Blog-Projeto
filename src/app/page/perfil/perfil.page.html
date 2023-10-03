@@ -25,7 +25,7 @@
             <textarea [(ngModel)]="n.bio" name="bio" placeholder="Sobre você"></textarea>
             <label for="email">E-mail</label>
             <input id="email" type="email" [(ngModel)]="n.email" name="email">
-            <ion-button fill="outline" size="default" (click)="atualizarNome(n)">Salvar Alterações</ion-button>
+            <ion-button fill="outline" size="default" (click)="atualizarNome(novoNome, novaBio)">Salvar Alterações</ion-button>
         </div>
       </div>
   </div>
