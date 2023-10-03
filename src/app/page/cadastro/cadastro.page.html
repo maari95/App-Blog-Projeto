@@ -7,7 +7,7 @@
         <h1>cadastro</h1>
         <ion-card-content class="text" style="margin-left: 50%;transform: translate(-50%);">
           <div class="item">
-            <input [(ngModel)]="nome" placeholder="Nome" type="text">
+            <!-- <input [(ngModel)]="nome" placeholder="Nome" type="text"> -->
           </div>
           <div class="item">
             <input class="input" type="email" [(ngModel)]="email" placeholder="Email">
@@ -15,7 +15,7 @@
           <div class="item">
             <input class="input" type="password" [(ngModel)]="senha" placeholder="Senha">
           </div>
-          <textarea name="bio" id="bio" rows="5" placeholder="Bio..."></textarea>
+          <!-- <textarea name="bio" id="bio" rows="5" placeholder="Bio..." [(ngModel)]="bio"></textarea> -->
           <ion-button class="button" (click)="registrar()">Cadastrar-se</ion-button>
         </ion-card-content>
         <p>Já possui uma conta?<a [routerLink]="['/login']">Conecte-se</a> </p>
