@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <img class="back-img" src="assets/img/fundo.gif" alt="wallpaper">
+  <div class="container">
+      <h1>Meu perfil</h1>
+      <div class="content" *ngFor="let n of nomes">
+        <div class="lista" *ngIf="!n.editando">
+            <p class="linha">{{n.nome}}</p>
+            <p class="linha">{{n.bio}}</p>
+            <p class="linha">{{n.email}}</p>
+            <ion-button fill="outline" size="default" (click)="n.editando = true">Alterar Dados</ion-button>
+        </div>
+        <div class="lista" *ngIf="n.editando">
+            <label for="nome">Nome</label>
+            <input id="nome" [(ngModel)]="n.nome" name="nome">
+            <label>Bio</label>
+            <textarea [(ngModel)]="n.bio" name="bio" placeholder="Sobre você"></textarea>
+            <label for="email">E-mail</label>
+            <input id="email" type="email" [(ngModel)]="n.email" name="email">
+            <ion-button fill="outline" size="default" (click)="atualizarNome(n)">Salvar Alterações</ion-button>
+        </div>
+      </div>
+  </div>
+</ion-content>

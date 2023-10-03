@@ -15,6 +15,7 @@
           <div class="item">
             <input class="input" type="password" [(ngModel)]="senha" placeholder="Senha">
           </div>
+          <textarea name="bio" id="bio" rows="5" placeholder="Bio..."></textarea>
           <ion-button class="button" (click)="registrar()">Cadastrar-se</ion-button>
         </ion-card-content>
         <p>Já possui uma conta?<a [routerLink]="['/login']">Conecte-se</a> </p>
