@@ -3,34 +3,110 @@
     <ion-buttons slot="start">
       <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Pesquisar perguntas frequentes</ion-title>
+    <ion-title>Perguntas Frequentes</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-content>
-    <ion-list>
-      <ng-container *ngFor="let group of faqGroups">
-        <ion-item-divider> 
-          <ion-label style="font-size: 20px; margin-top: 25px;">{{ group.title }}</ion-label>
-        </ion-item-divider>
-      
-        
-          <ng-container *ngFor="let item of group.items">
-            <ion-item (click)="toggleAnswer(item)">
-              <ion-label >{{ item.question }}</ion-label>
-              <button class="icon"><i class='bx bx-chevron-down'></i></button>
-            </ion-item>
-           
-            <div class="resposta" *ngIf="item.expanded">
-             <strong><p>{{ item.answer }}</p></strong>
-            </div>
+<ion-content>
+  <div class="container">
+    <input type="radio" name="slider" id="movel" checked>
+    <input type="radio" name="slider" id="fundamentos">
+    <input type="radio" name="slider" id="privacidade">
+    <input type="radio" name="slider" id="conta">
+
+    <nav class="background">
+      <label for="movel" class="movel">Móvel</label>
+      <label for="fundamentos" class="fundamentos">Fundamentos</label>
+      <label for="privacidade" class="privacidade" style="margin-left:20px">Privacidade</label>
+      <label for="conta" class="conta">Conta</label>
+      <div class="slider"></div>
+    </nav>
+
+    <section>
+      <div class="content content-1">
+        <ion-list>
+          <ng-container *ngFor="let group of movelGroup">
+            <ion-item-divider>
+              <ion-label class="cx-text">{{ group.title }}</ion-label>
+            </ion-item-divider>
+
+            <ng-container *ngFor="let item of group.items">
+              <ion-item class="item" (click)="toggleAnswer(item)">
+                <ion-label class="pergunta">{{ item.question }}</ion-label>
+                <ion-icon slot="end" [name]="item.expanded ? 'chevron-up' : 'chevron-down'"></ion-icon>
+              </ion-item>
+
+              <div class="resposta" *ngIf="item.expanded">
+                <strong>
+                  <p>{{ item.answer }}</p>
+                </strong>
+              </div>
+            </ng-container>
+
           </ng-container>
-        
-      </ng-container>
-    </ion-list>
-  </ion-content>
+        </ion-list>
+      </div>
 
-
-
+      <div class="content content-2">
+        <ion-list>
+          <ng-container *ngFor="let group of fundamentosGroup">
+            <ion-item-divider>
+              <ion-label class="cx-text">{{ group.title }}</ion-label>
+            </ion-item-divider>
+            <ng-container *ngFor="let item of group.items">
+              <ion-item class="item" (click)="toggleAnswer(item)">
+                <ion-label class="pergunta">{{ item.question }}</ion-label>
+                <ion-icon slot="end" [name]="item.expanded ? 'chevron-up' : 'chevron-down'"></ion-icon>
+              </ion-item>
+              <div class="resposta" *ngIf="item.expanded">
+                <strong>
+                  <p>{{ item.answer }}</p>
+                </strong>
+              </div>
+            </ng-container>
+          </ng-container>
+        </ion-list>
+      </div>
+      <div class="content content-3">
+        <ion-list>
+          <ng-container *ngFor="let group of privacidadeGroup">
+            <ion-item-divider>
+              <ion-label class="cx-text">{{ group.title }}</ion-label>
+            </ion-item-divider>
+            <ng-container *ngFor="let item of group.items">
+              <ion-item class="item" (click)="toggleAnswer(item)">
+                <ion-label class="pergunta">{{ item.question }}</ion-label>
+                <ion-icon slot="end" [name]="item.expanded ? 'chevron-up' : 'chevron-down'"></ion-icon>
+              </ion-item>
+              <div class="resposta" *ngIf="item.expanded">
+                <strong>
+                  <p>{{ item.answer }}</p>
+                </strong>
+              </div>
+            </ng-container>
+          </ng-container>
+        </ion-list>
+      </div>
+      <div class="content content-4">
+        <ion-list>
+          <ng-container *ngFor="let group of contaGroup">
+            <ion-item-divider>
+              <ion-label class="cx-text">{{ group.title }}</ion-label>
+            </ion-item-divider>
+            <ng-container *ngFor="let item of group.items">
+              <ion-item class="item" (click)="toggleAnswer(item)">
+                <ion-label class="pergunta">{{ item.question }}</ion-label>
+                <ion-icon slot="end" [name]="item.expanded ? 'chevron-up' : 'chevron-down'"></ion-icon>
+              </ion-item>
+              <div class="resposta" *ngIf="item.expanded">
+                <strong>
+                  <p>{{ item.answer }}</p>
+                </strong>
+              </div>
+            </ng-container>
+          </ng-container>
+        </ion-list>
+      </div>
+    </section>
+  </div>
 </ion-content>
