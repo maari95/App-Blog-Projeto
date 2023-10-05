@@ -11,49 +11,47 @@ import { CadastroService } from './cadastro.service';
 export class PerfilService {
 
   userId: string | null = null;
+  
 
   constructor(private db: AngularFireDatabase, private cadastroService: CadastroService) { }
+ 
+ 
+ getNome(): Observable<any> {
 
-  getNome(): Observable<any>{
-    return this.db.list('usuarios').valueChanges();
-    if (this.userId) {
-        return this.db.object(`usuarios/${this.userId}`).valueChanges();
-        } else {
-          // Lida com o caso em que o ID do usuário não foi definido
-      console.error('ID do usuário não definido.');
-       return new Observable(); // Retorna um Observable vazio em caso de erro
-     }
-  }
+  const userId = localStorage.getItem('userID'); 
 
+     if (userId) {
+       return this.db.list(`usuarios/${this.userId}`).valueChanges();
+      // return this.db.list('usuarios/${this.userId}').valueChanges();
 
-  // getNome(): Observable<any> {
-  //   if (this.userId) {
-  //     return this.db.object(`usuarios/${this.userId}`).valueChanges();
-  //   } else {
-  //     // Lida com o caso em que o ID do usuário não foi definido
-  //     console.error('ID do usuário não definido.');
-  //     return new Observable(); // Retorna um Observable vazio em caso de erro
-  //   }
-  // }
+     } else {
+       console.error('ID do usuário não definido.');
+      return new Observable(); 
+    }
+   }
  
   addNome(nome: any, email: string): void{
     const id = uuidv4();
     this.db.list('usuarios').set(id, { ...nome, id, email});
   }
-  updateNome(id: string, nome: string, bio: string,): void {
-    const updateData = {
-      nome,
-      bio,
-    }
-    this.db.list('usuarios').update(id, updateData);
-  }
-  removeNome(id: string): void{
-    this.db.list('usuarios').remove(id);
-  }
 
-  setUserId(userId: string | null) {
-    this.userId = userId; // Define o ID do usuário
-  }
+
+  updateNome(id: string, nome: string, bio: string): Observable<void>{
+    
+    if(id){
+      const updateData = {nome, bio}; 
+      this.db.list('usuarios').update(id, updateData);
+    }else{
+      console.log("Id nao encontrado");
+    }
+      return new Observable();
+      
+    }
+   
+ 
+  // setUserId(userId: string | null) {
+  //   this.userId = userId; // Define o ID do usuário
+  // }
 
   
 }

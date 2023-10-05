@@ -17,24 +17,19 @@ export class CadastroService {
     return this.fireAuth.signInWithEmailAndPassword(email, senha);
   }
 
-  cadastrar(email: string, senha: string) {
+  cadastrar(email: string, senha: string, nome: string, bio: string) {
     return this.fireAuth.createUserWithEmailAndPassword(email, senha)
       .then((userCredential) => {
         const user = userCredential.user;
         if (user) {
-          // Agora, você pode salvar os dados do usuário no Realtime Database
-          // Por exemplo, você pode criar um nó de usuário com o UID como chave
-          // e salvar os dados relevantes lá.
+          
           return this.db.object(`usuarios/${user.uid}`).set({
-            // email: user.email,
-            // nome: nome,
-            // bio: bio,
+           nome: nome,
+           bio: bio,
 
-            // Outros dados do usuário que você deseja salvar
           });
         } else {
-          // Trate o caso em que 'user' é null, por exemplo, lançando um erro ou tratando a falha de alguma outra forma.
-          throw new Error('Falha ao criar a conta de usuário.');
+           throw new Error('Falha ao criar a conta de usuário.');
         }
       });
   }
@@ -52,10 +47,10 @@ export class CadastroService {
     return this.fireAuth.signOut();
   }
 
-  setUser(user: string){
-    localStorage.setItem('user', user);
-  }
-  getUser(): string | null {
-    return localStorage.getItem('user');
-  }
+  // setUser(user: string){
+  //   localStorage.setItem('user', user);
+  // }
+  // getUser(): string | null {
+  //   return localStorage.getItem('user');
+  // }
 }

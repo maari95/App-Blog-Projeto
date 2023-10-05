@@ -14,11 +14,11 @@ export class CadastroPage implements OnInit {
 
   
 
-  // nome:string='';
+  nome:string='';
   email: string = '';
   senha: string = '';
   mensagem: string = '';
-  // bio: string='';
+  bio: string='';
 
   constructor(private service: CadastroService, private router: Router, private toastController: ToastController, private ActionSheetCtrl: ActionSheetController,private firedata: AngularFireDatabase ) { }
 
@@ -27,9 +27,9 @@ export class CadastroPage implements OnInit {
 
 
   async registrar() {
-    if (this.email && this.senha) {
+    if (this.email && this.senha && this.nome && this.bio) {
       try {
-        const result = await this.service.cadastrar(this.email, this.senha);
+        const result = await this.service.cadastrar(this.email, this.senha, this.nome, this.bio);
   
         console.log('Usuário Cadastrado');
         this.mostrarToast('Cadastro realizado com sucesso');
@@ -42,6 +42,7 @@ export class CadastroPage implements OnInit {
       this.mostrarToast('Preencha todos os campos');
     }
   }
+ 
   
 
   async mostrarToast(mensagem: string) {

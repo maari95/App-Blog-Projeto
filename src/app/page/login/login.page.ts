@@ -28,6 +28,10 @@ export class LoginPage {
     );
     if (userCredential.user){
       this.authService.login();
+      console.log(userCredential.user);
+
+      localStorage.setItem('userID', userCredential.user.uid);
+
       this.router.navigateByUrl('/home');
     }
   }catch(error){
