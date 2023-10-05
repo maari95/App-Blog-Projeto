@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-
+import { ModalController } from '@ionic/angular';
+import { ViewPubPage } from '../view-pub/view-pub.page';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class HomePage implements OnInit {
 
   @ViewChild('carouselContent', { static: true }) carouselContent!: ElementRef;
-  constructor(){ }
+
+  constructor(private modalCtrl: ModalController) { }
 
   ngOnInit() {
     // Movendo o carrossel a cada 3 segundos
@@ -33,5 +35,18 @@ export class HomePage implements OnInit {
   }
 
   
+  async abrirModal() {
+    const modal = await this.modalCtrl.create({
+      component:ViewPubPage,
+      componentProps: {
+        
+      }
+    });
+
+    await modal.present();
+  }
 
 }
+
+
+
