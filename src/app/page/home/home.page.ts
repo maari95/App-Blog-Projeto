@@ -9,7 +9,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 export class HomePage implements OnInit {
 
   @ViewChild('carouselContent', { static: true }) carouselContent!: ElementRef;
-  constructor(){ }
+  constructor() { }
 
   ngOnInit() {
     // Movendo o carrossel a cada 3 segundos
@@ -32,6 +32,16 @@ export class HomePage implements OnInit {
     }, 500);
   }
 
-  
+  postagem = [
+    { title: 'post 1', autor: 'wellington', img: 'assets/img/imagemB2.jpg', text: 'bla bla bla bla' },
+    { title: 'post 2', autor: 'Stephanie', img: 'assets/img/imagemB3.jpg', text: 'ble ble ble ble' },
+  ]
+
+  news = [
+    {img:'assets/img/imagemB9.webp'},
+    {img:'assets/img/imagemB10.webp'},
+    {img:'assets/img/imagemB11.webp'},
+    {img:'assets/img/imagemB12.jpeg'},
+  ]
 
 }

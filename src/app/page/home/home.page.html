@@ -1,4 +1,3 @@
-
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
@@ -28,58 +27,22 @@
   <section id="sec1">
     <h1 class="title">Cursos em destaque</h1>
     <div class="card-group">
-      <div class="card">
-        <div class="card-img"><img src="assets/img/imagemB2.jpg"></div>
-        <p class="p">Professor:ababa</p>
-        <p class="hr">curso</p>
-      </div>
-      <div class="card">
-        <div class="card-img"><img src="assets/img/imagemB3.jpg"></div>
-        <p class="p">Professor:ababa</p>
-        <p class="hr">curso</p>
-      </div>
-      <div class="card">
-        <div class="card-img"><img src="assets/img/imagemB4.jpg"></div>
-        <p class="p">Professor:ababa</p>
-        <p class="hr">curso</p>
-      </div>
-      <div class="card">
-        <div class="card-img"><img src="assets/img/imagemB5.jpg"></div>
-        <p class="p">Professor:ababa</p>
-        <p class="hr">curso</p>
-      </div>
-      <div class="card">
-        <div class="card-img"><img src="assets/img/imagemB6.jpg"></div>
-        <p class="p">Professor:ababa</p>
-        <p class="hr">curso</p>
-      </div>
-      <div class="card">
-        <div class="card-img"><img src="assets/img/imagemB7.webp"></div>
-        <p class="p">Professor:ababa</p>
-        <p class="hr">curso</p>
+      <div class="card" *ngFor="let post of postagem">
+        <div class="card-img"><img src="{{post.img}}"></div>
+        <div class="card-txt">
+          <p class="p">{{post.title}} - por {{post.autor}}</p>
+          <p class="hr">{{post.text}}</p>
+        </div>
       </div>
     </div>
   </section>
   <section id="sec2">
     <h1 class="title">Ultimas postagens</h1>
     <div class="news">
-      <div class="card-news">
-        <img src="assets/img/imagemB9.webp">
-        <span>novo</span>
-      </div>
-      <div class="card-news">
-        <img src="assets/img/imagemB10.webp">
-        <span>novo</span>
-      </div>
-      <div class="card-news">
-        <img src="assets/img/imagemB11.webp">
-        <span>novo</span>
-      </div>
-      <div class="card-news">
-        <img src="assets/img/imagemB12.jpeg">
+      <div class="card-news" *ngFor="let new of news">
+        <img src="{{new.img}}">
         <span>novo</span>
       </div>
     </div>
   </section>
 </ion-content>
-
