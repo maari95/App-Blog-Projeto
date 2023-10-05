@@ -43,7 +43,11 @@ const routes: Routes = [
     path: 'perfil',
     loadChildren: () => import('./page/perfil/perfil.module').then( m => m.PerfilPageModule),
     canActivate:[AuthGuard]
+  },  {
+    path: 'view-pub',
+    loadChildren: () => import('./page/view-pub/view-pub.module').then( m => m.ViewPubPageModule)
   },
+
 
  
   
