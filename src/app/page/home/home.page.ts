@@ -11,7 +11,9 @@ export class HomePage implements OnInit {
 
   @ViewChild('carouselContent', { static: true }) carouselContent!: ElementRef;
 
+
   constructor(private modalCtrl: ModalController) { }
+
 
   ngOnInit() {
     // Movendo o carrossel a cada 3 segundos
@@ -33,7 +35,6 @@ export class HomePage implements OnInit {
       }, 50);
     }, 500);
   }
-
   
   async abrirModal() {
     const modal = await this.modalCtrl.create({
@@ -45,6 +46,7 @@ export class HomePage implements OnInit {
 
     await modal.present();
   }
+
 
 }
 
