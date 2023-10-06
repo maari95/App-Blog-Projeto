@@ -10,23 +10,23 @@
 <ion-content [fullscreen]="true">
   <img class="back-img" src="assets/img/fundo.gif" alt="wallpaper">
   <div class="container">
-      <h1>Meu perfil</h1>
-      <div class="content" *ngFor="let dados of dadosUser">
-        <div class="lista" *ngIf="!dados.editando">
-            <p class="linha">{{dados.nome}}</p>
-            <p class="linha">{{dados.bio}}</p>
-            <p class="linha">{{dados.email}}</p>
-            <ion-button fill="outline" size="default" (click)="dados.editando = true">Alterar Dados</ion-button>
-        </div>
-        <div class="lista" *ngIf="dados.editando">
-            <label for="nome">Nome</label>
-            <input id="nome" [(ngModel)]="dados.nome" name="nome">
-            <label>Bio</label>
-            <textarea [(ngModel)]="dados.bio" name="bio" placeholder="Sobre você"></textarea>
-            <label for="email">E-mail</label>
-            <input id="email" type="email" [(ngModel)]="dados.email" name="email">
-            <ion-button fill="outline" size="default" (click)="atualizarNome(novoNome, novaBio)">Salvar Alterações</ion-button>
-        </div>
+    <h1>Meu perfil</h1>
+    <div class="content">
+      <div class="lista" *ngIf="!editando">
+        <p class="linha">{{ nomeUsuario }}</p>
+        <p class="linha">{{ bio }}</p>
+        <p class="linha">{{ email }}</p>
+        <ion-button fill="outline" size="default" (click)="habilitarEdicao()">Alterar Dados</ion-button>
       </div>
+      <div class="lista" *ngIf="editando">
+        <label for="nome">Nome</label>
+        <input id="nome" [(ngModel)]="novoNome" name="novoNome">
+        <label>Bio</label>
+        <textarea [(ngModel)]="novaBio" name="novaBio" placeholder="Sobre você"></textarea>
+        <label for="email">E-mail</label>
+        <input id="email" type="email" [(ngModel)]="novoEmail" name="novoEmail">
+        <ion-button fill="outline" size="default" (click)="salvarAlteracoes()">Salvar Alterações</ion-button>
+      </div>
+    </div>
   </div>
 </ion-content>
