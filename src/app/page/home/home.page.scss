@@ -1,22 +1,70 @@
-.carousel {
-  overflow: hidden;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-
-.carousel-content {
+.gradient-background {
+  background: linear-gradient(300deg, #8b1874, #020101, #901a78);
+  background-size: 180% 180%;
+  animation: gradient-animation 27s ease infinite;
+  height: 80vh;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   display: flex;
-  transition: transform 0.5s ease-in-out;
 }
 
-.carousel-item {
-  flex: 0 0 100%;
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-.carousel img {
+.content {
+  position: relative;
   width: 100%;
-  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.content .textBox {
+  position: relative;
+  max-width: 600px;
+}
+
+.content .text-box h2 {
+  color: aliceblue;
+  font-size: 5em;
+  Line-height: 1.4em;
+  font-weight: 500;
+  font-family: 'Garet', sans-serif;
+}
+
+.content .text-box h2 span {
+  color: var(--primary);
+  font-family: 'Garet', sans-serif;
+
+}
+
+.content .text-box p {
+  font-size: 1.2em;
+  color: aliceblue;
+  max-width: 900px;
+}
+
+.content .img-box {
+  width: 600px;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 100px;
+  margin-top: 50px;
+}
+
+.content .img-box img {
+  max-width: 800px;
 }
 
 .title {
@@ -94,7 +142,8 @@
   background-color: var(--ion-color-primary);
   color: aliceblue;
 }
-.logo{
+
+.logo {
   width: 20vw;
 }
 
@@ -148,7 +197,7 @@
 
   .card-img {
     position: absolute;
-    top:0;
+    top: 0;
     width: 100%;
     height: 100%;
   }
@@ -160,7 +209,7 @@
     opacity: 1;
   }
 
-  .card-img img{
+  .card-img img {
     width: 100%;
     height: 100%;
   }
@@ -178,7 +227,7 @@
     margin: 10px;
   }
 
-  .card-news img{
+  .card-news img {
     width: 100%;
     height: 100%;
   }
@@ -191,7 +240,8 @@
     background-color: var(--ion-color-primary);
     color: aliceblue;
   }
-  .logo{
+
+  .logo {
     width: 10vw;
   }
 }
@@ -213,7 +263,7 @@
   .card-img {
     z-index: 3;
     position: absolute;
-    top:0;
+    top: 0;
     width: calc(100% - 4px);
     height: calc(100% - 29px);
     transition: opacity 0.3s ease-in-out;
@@ -254,20 +304,20 @@
     opacity: 0;
   }
 
-  .card-news{
+  .card-news {
     width: 40%;
     margin: 2.5%;
     height: 300px;
   }
 
-  .card-news img{
+  .card-news img {
     width: 100%;
     height: 100%;
   }
 }
 
 @media (max-width:800px) {
-  .logo{
+  .logo {
     width: 20vw;
   }
 }
