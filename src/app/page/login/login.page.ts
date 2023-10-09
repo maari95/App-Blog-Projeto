@@ -28,10 +28,8 @@ export class LoginPage {
     );
     if (userCredential.user){
       this.authService.login();
-      console.log(userCredential.user);
-
-      localStorage.setItem('userID', userCredential.user.uid);
-
+      /* console.log(userCredential.user.uid); */
+      localStorage.setItem('id',userCredential.user.uid);
       this.router.navigateByUrl('/home');
     }
   }catch(error){
@@ -45,6 +43,7 @@ export class LoginPage {
   try{
     this.autenticar.signOut();
     this.cadastro.logout();
+    
     this.router.navigateByUrl('/login');
   }catch(error){
     console.error('Erro ao fazer logout', error);

@@ -21,6 +21,7 @@ export class AppComponent {
 
 sair(){
   this.service.sair();
+  localStorage.removeItem('id');
   this.router.navigate(['/login']);
 }
 

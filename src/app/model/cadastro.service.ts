@@ -26,6 +26,7 @@ export class CadastroService {
           return this.db.object(`usuarios/${user.uid}`).set({
            nome: nome,
            bio: bio,
+           email: email
 
           });
         } else {
@@ -44,6 +45,7 @@ export class CadastroService {
   logout() {
     localStorage.removeItem('token')
     localStorage.removeItem('expiracao')
+    localStorage.removeItem('id');
     return this.fireAuth.signOut();
   }
 

@@ -1,85 +1,67 @@
 import { Component, OnInit } from '@angular/core';
-import { PerfilService } from 'src/app/model/perfil.service';
-
+import { PerfilService } from 'src/app/model/perfil.service'; // Importe o seu serviço aqui
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.page.html',
-  styleUrls: ['./perfil.page.scss'],
+  styleUrls: ['./perfil.page.scss']
 })
 export class PerfilPage implements OnInit {
+  nomeUsuario: string=''
+  bio: string=''
+  email: string=''
+  novoNome: string='' // Variável para armazenar o novo nome
+  novaBio: string='' // Variável para armazenar a nova bio
+  novoEmail: string='' // Variável para armazenar o novo email
+  editando: boolean = false; // Variável para controlar a edição
 
-  nomeSelecionado: any = {};
-  dadosUser: any = [];
-  validarCampo: boolean = false;
-  novoNome: string = ''; 
-  novaBio: string = ''; 
+  constructor(
+    private perfilService: PerfilService,
+    private afAuth: AngularFireAuth,
+    private router: Router
+  ) {}
 
-  
-
-  constructor(private service: PerfilService) { }
-   
-  
   ngOnInit(): void {
-    this.getNome();
-  }
-  
-  getNome(): void {
-
-    const userId = localStorage.getItem('userID'); 
-
-    if (userId !== null) {
-      this.service.getNome().subscribe(
-        (dadosUser) => {
-          if (dadosUser) {
-            // Dados do usuário obtidos com sucesso, você pode fazer o que for necessário com eles aqui
-            this.dadosUser = dadosUser;
-
-          } else {
-            console.log(dadosUser);
-            console.error('Dados do usuário não encontrados no Firebase.');
+    // Verifique se o usuário está logado
+    this.afAuth.authState.subscribe(user => {
+      if (user) {
+        // O usuário está logado, puxe os dados do usuário para edição
+        this.perfilService.getAllUserData(user.uid).subscribe(userData => {
+          if (userData) {
+            this.nomeUsuario = userData.nome;
+            this.bio = userData.bio;
+            this.email = userData.email;
           }
-        },
-        (error) => {
-          console.error('Erro ao obter dados do usuário:', error);
-        }
-      );
-    } else {
-      console.error('ID de usuário não encontrado no localStorage.');
-    }
-  }
-  
-  selecionarNome(nome: any): void {
-    console.log('Nome Selecionado', nome);
-
-    this.nomeSelecionado = nome;
-    this.validarCampo = false;
+        });
+      } else {
+        // O usuário não está logado, redirecione para a página de login
+        this.router.navigateByUrl('/login');
+      }
+    });
   }
 
-
-  atualizarNome(novoNome: string, novaBio: string): void{ 
-    const userId = localStorage.getItem('userID'); 
-
-      if(userId){
-        this.service.updateNome(userId, novoNome, novaBio).subscribe(() => {
-          console.log('Dados alterados com sucesso');      
-        },
-        (error) => {
-          console.log("Erro ao alterar dados", error);         
-        }
-      );
-    } else {
-      console.error('ID de usuário não encontrado no localStorage');
-    }
+  habilitarEdicao(): void {
+    this.editando = true;
+    // Inicialize as variáveis de edição com os valores atuais
+    this.novoNome = this.nomeUsuario;
+    this.novaBio = this.bio;
+    this.novoEmail = this.email;
   }
 
-  verificarId(): void {
-    if (this.nomeSelecionado.id) {
-       this.atualizarNome(this.novaBio, this.novoNome);
-    } else {
-      console.log('Não foi possivel atualizar os dados');
-    }
-    this.nomeSelecionado = {};
-  }
+  salvarAlteracoes(): void {
+    console.log("Novo Nome:", this.novoNome);
+    console.log("Nova Bio:", this.novaBio);
+    console.log("Novo Email:", this.novoEmail);
+    // Chame o método para editar o perfil com os novos valores
+    this.perfilService.editarPerfilUsuario(this.novoNome, this.novaBio, this.novoEmail);
+    
+    // Atualize os campos com os novos valores
+    this.nomeUsuario = this.novoNome;
+    this.bio = this.novaBio;
+    this.email = this.novoEmail;
 
+    this.editando = false; // Desative o modo de edição
+  }
 }
