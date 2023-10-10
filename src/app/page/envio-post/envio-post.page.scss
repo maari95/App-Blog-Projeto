@@ -1,11 +1,20 @@
+.full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vw;
+}
+
 .enviar {
   margin-top: 10px;
   padding: 10px 25px;
   background-color: var(--ion-color-secondary);
   color: aliceblue;
-  margin-left: 50%;
-  transform: translate(-50%);
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
 .img {
@@ -15,11 +24,9 @@
   background-color: var(--ion-color-secondary);
   padding: 10px;
   color: aliceblue;
-  margin-left: 50%;
-  transform: translate(-50%);
 }
 
-.back-img{
+.back-img {
   z-index: -1;
   object-fit: cover;
   width: 100%;
@@ -29,11 +36,12 @@
   left: 0;
 }
 
-.img i{
+.img i {
   margin-right: 10px;
 }
 
 .input {
+  width: 90%;
   margin: 10px;
 }
 
@@ -42,25 +50,29 @@ input[type="file"] {
 }
 
 form {
+  position: relative;
   margin-top: 20%;
   width: 90%;
   margin-left: 5%;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding: 10px;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   background-color: rgba(245, 245, 245, 0.774);
   border-radius: 5px;
 }
 
-label{
-  width: 100%;
+label {
+  width: 90%;
   height: 100%;
   display: flex;
   justify-content: center;
 }
 
-@media(min-width:1080px){
-  form{
+@media(min-width:1080px) {
+  form {
     margin-left: 50%;
     transform: translate(-50%);
     width: 50%;

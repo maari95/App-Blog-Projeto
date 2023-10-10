@@ -1,3 +1,4 @@
+<div class="full">
 <ion-header>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
@@ -6,28 +7,26 @@
     <ion-title>New Post</ion-title>
   </ion-toolbar>
 </ion-header>
+
+
 <ion-content [fullscreen]="true">
   <img class="back-img" src="assets/img/fundo.gif" alt="wallpaper">
   <form>
     <div class="img">
-      <input class="arquivo" type="file" id="file" accept="image/*" required>
+      <input class="arquivo" type="file" id="file" [(ngModel)]="formData.imagem" accept="image/*" required>
       <label for="file"><i class='bx bx-image-alt'></i>Selecione uma Imagem</label>
     </div>
     <div class="input">
       <ion-item>
         <ion-label position="floating">Título da Postagem</ion-label>
-        <ion-input type="text" name="title" required></ion-input>
+        <ion-input type="text" name="title" [(ngModel)]="formData.title" required></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">Texto da Postagem</ion-label>
-        <ion-textarea name="text" rows="5" required></ion-textarea>
+        <ion-textarea name="text" rows="5" [(ngModel)]="formData.text" required></ion-textarea>
+        <button type="button" class="enviar" (click)="enviar()">Enviar Postagem <i class='bx bxs-send'></i></button>
       </ion-item>
     </div>
-
-    <!-- <button class="enviar" shape="round" type="submit">Enviar Postagem <ion-icon slot="end" name="send"></ion-icon>
-    </button> -->
-
-    <button class="enviar">Enviar Postagem <i class='bx bxs-send'></i></button>
   </form>
-
 </ion-content>
+</div>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { HomePage } from '../home/home.page';
 
 @Component({
   selector: 'app-view-pub',
@@ -8,8 +9,12 @@ import { ModalController } from '@ionic/angular';
 })
 export class ViewPubPage implements OnInit {
 
+
+  @Input() post: any;
+  
   constructor(private modalCtrl: ModalController) { }
 
+  
   ngOnInit() {
   }
 

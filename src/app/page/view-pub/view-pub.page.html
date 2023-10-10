@@ -1,16 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>viewPub</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="fecharModal()">Fechar</ion-button>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="fecharModal()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
     </ion-buttons>
+    <ion-title>Publication Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">viewPub</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div class="publication-details">
+    <img src="{{ post.img }}" alt="{{ post.title }}">
+    <h2>{{ post.title }}</h2>
+    <p>Author: {{ post.autor }}</p>
+    <p>{{ post.text }}</p>
+  </div>
 </ion-content>

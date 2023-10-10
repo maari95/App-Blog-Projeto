@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   public appPages = [
     { title: 'Página Inicial', url: 'home', icon: 'home' },
-    { title: 'Nova postagem', url: 'envio-post', icon: 'add' },
+    { title: 'Nova postagem', url: 'envio-post', icon: 'add'},
     { title: 'FAQ', url: 'contact', icon: 'chatbox-ellipses' },
     { title: 'Sobre', url: 'sobre', icon: 'information' },
     { title: 'Login', url: 'login', icon: 'person' },

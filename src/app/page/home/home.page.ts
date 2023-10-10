@@ -20,6 +20,8 @@ export class HomePage implements OnInit {
     setInterval(() => {
       this.moveCarousel();
     }, 3000);
+
+    this.carregarDadosLocalStorage();
   }
 
   moveCarousel() {
@@ -36,11 +38,11 @@ export class HomePage implements OnInit {
     }, 500);
   }
   
-  async abrirModal() {
+  async abrirModal(post: any) {
     const modal = await this.modalCtrl.create({
       component:ViewPubPage,
       componentProps: {
-        
+        post : post
       }
     });
 
@@ -49,15 +51,45 @@ export class HomePage implements OnInit {
 
   postagem = [
     { title: 'post 1', autor: 'wellington', img: 'assets/img/imagemB2.jpg', text: 'bla bla bla bla' },
-    { title: 'post 2', autor: 'Stephanie', img: 'assets/img/imagemB3.jpg', text: 'ble ble ble ble' },
   ]
 
   news = [
     {img:'assets/img/imagemB9.webp'},
-    {img:'assets/img/imagemB10.webp'},
-    {img:'assets/img/imagemB11.webp'},
-    {img:'assets/img/imagemB12.jpeg'},
   ]
+
+  salvarDadosLocalStorage() {
+    localStorage.setItem('postagem', JSON.stringify(this.postagem));
+    localStorage.setItem('news', JSON.stringify(this.news));
+  }
+
+  // Método para carregar os dados do localStorage
+  carregarDadosLocalStorage() {
+    // Verificar se há dados no localStorage antes de carregar
+    if (localStorage.getItem('postagem')) {
+      this.getPostagem();
+    }
+    if (localStorage.getItem('news')) {
+      this.getNews();
+    }
+  }
+
+  // Método para obter as postagens do localStorage
+  getPostagem() {
+    const postagemString = localStorage.getItem('postagem');
+    if (postagemString) {
+      this.postagem = JSON.parse(postagemString);
+    }
+  }
+
+  // Método para obter as notícias do localStorage
+  getNews() {
+    const newsString = localStorage.getItem('news');
+    if (newsString) {
+      this.news = JSON.parse(newsString);
+    }
+  }
+
+
 
 }
 
