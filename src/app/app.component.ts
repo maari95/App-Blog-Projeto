@@ -13,7 +13,7 @@ export class AppComponent {
     { title: 'FAQ', url: 'contact', icon: 'chatbox-ellipses' },
     { title: 'Sobre', url: 'sobre', icon: 'information' },
     { title: 'Login', url: 'login', icon: 'person' },
-    { title: 'Perfil', url: 'perfil', icon: 'finger-print-outline' },
+    { title: 'Perfil', url: 'perfil', icon: 'person-circle'},
     
   ];
  /*  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders']; */

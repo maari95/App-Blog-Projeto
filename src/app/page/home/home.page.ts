@@ -15,28 +15,8 @@ export class HomePage implements OnInit {
   constructor(private modalCtrl: ModalController) { }
 
 
-  ngOnInit() {
-    // Movendo o carrossel a cada 3 segundos
-    setInterval(() => {
-      this.moveCarousel();
-    }, 3000);
+  ngOnInit() { }
 
-    this.carregarDadosLocalStorage();
-  }
-
-  moveCarousel() {
-    const carouselItemWidth = this.carouselContent.nativeElement.querySelector('.carousel-item').offsetWidth;
-
-    this.carouselContent.nativeElement.style.transform = 'translateX(-' + carouselItemWidth + 'px)';
-    setTimeout(() => {
-      this.carouselContent.nativeElement.appendChild(this.carouselContent.nativeElement.firstElementChild);
-      this.carouselContent.nativeElement.style.transition = 'none';
-      this.carouselContent.nativeElement.style.transform = 'translateX(0)';
-      setTimeout(() => {
-        this.carouselContent.nativeElement.style.transition = 'transform 0.5s ease-in-out';
-      }, 50);
-    }, 500);
-  }
   
   async abrirModal(post: any) {
     const modal = await this.modalCtrl.create({
@@ -50,7 +30,7 @@ export class HomePage implements OnInit {
   }
 
   postagem = [
-    { title: 'post 1', autor: 'wellington', img: 'assets/img/imagemB2.jpg', text: 'bla bla bla bla' },
+    { title: 'Curso de Python: Dominando a Linguagem de Programação', autor: 'wellington', img: 'assets/img/imagemB2.jpg', text: 'Python é uma das linguagens de programação mais populares e versáteis do mundo, conhecida por sua simplicidade e poder. Nosso curso de Python foi projetado para ajudar você a dominar essa linguagem desde o básico até níveis avançados. ' },
   ]
 
   news = [

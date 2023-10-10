@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <img src="assets/logo/6.png" alt="" class="logo">
+    <img src="assets/logo/6.png" alt="Logo" class="logo">
     <!-- <ion-title>Página Inicial</ion-title> -->
   </ion-toolbar>
 </ion-header>
@@ -14,12 +14,13 @@
     <div class="content">
       <div class="text-box">
         <h2>Bem vindo a FRAME <span>NEWS</span></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          Aliquid amet vitae ea est molestiae quas accusamus illum similique ad nam,
-          voluptates nesciunt delectus suscipit voluptatum earum tempora corrupti fugit modi!</p>
+        <p>Seja a primeira página do seu dia! Informação fresca,
+          análises perspicazes e histórias que importam.
+          Nosso blog de notícias mantém você à frente dos acontecimentos.<br>
+          Leia, absorva, conecte-se.</p>
       </div>
       <div class="img-box">
-        <img src="assets/logo/6.png" alt="">
+        <img src="assets/logo/6.png" alt="Logo">
       </div>
     </div>
   </div>
@@ -28,64 +29,23 @@
     <h1 class="title">Cursos em destaque</h1>
     <div class="card-group">
       <div class="card" *ngFor="let post of postagem" (click)="abrirModal(post)">
-        <div class="card-img"><img src="{{post.img}}"></div>
+        <div class="card-img"><img src="{{ post.img }}"></div>
         <div class="card-txt">
-          <p class="p">{{post.title}} - por {{post.autor}}</p>
-          <p class="hr">{{post.text}}</p>
+          <p class="p">{{ post.title }} - por {{ post.autor }}</p>
+          <p class="hr">{{ post.text }}</p>
         </div>
-      <div class="card">
-        <div class="card-img"><img src="assets/img/imagemB2.jpg"></div>
-        <p class="p">Professor:ababa</p>
-        <p class="hr">curso</p>
-      </div>
-      <div class="card">
-        <div class="card-img"><img src="assets/img/imagemB3.jpg"></div>
-        <p class="p">Professor:ababa</p>
-        <p class="hr">curso</p>
-      </div>
-      <div class="card">
-        <div class="card-img"><img src="assets/img/imagemB4.jpg"></div>
-        <p class="p">Professor:ababa</p>
-        <p class="hr">curso</p>
-      </div>
-      <div class="card">
-        <div class="card-img"><img src="assets/img/imagemB5.jpg"></div>
-        <p class="p">Professor:ababa</p>
-        <p class="hr">curso</p>
-      </div>
-      <div class="card">
-        <div class="card-img"><img src="assets/img/imagemB6.jpg"></div>
-        <p class="p">Professor:ababa</p>
-        <p class="hr">curso</p>
-      </div>
-      <div class="card">
-        <div class="card-img"><img src="assets/img/imagemB7.webp"></div>
-        <p class="p">Professor:ababa</p>
-        <p class="hr">curso</p>
       </div>
     </div>
   </section>
+  
   <section id="sec2">
-    <h1 class="title">Ultimas postagens</h1>
+    <h1 class="title">Últimas postagens</h1>
     <div class="news">
       <div class="card-news" (click)="abrirModal(new)" *ngFor="let new of news">
-        <img   src="{{new.img}}">
-      <div class="card-news">
-        <img src="assets/img/imagemB9.webp">
-        <span>novo</span>
-      </div>
-      <div class="card-news">
-        <img src="assets/img/imagemB10.webp">
-        <span>novo</span>
-      </div>
-      <div class="card-news">
-        <img src="assets/img/imagemB11.webp">
-        <span>novo</span>
-      </div>
-      <div class="card-news">
-        <img src="assets/img/imagemB12.jpeg">
+        <img src="{{ new.img }}">
         <span>novo</span>
       </div>
     </div>
   </section>
+  
 </ion-content>

@@ -10,10 +10,14 @@
 </ion-header>
 
 <ion-content>
+
   <div class="publication-details">
     <img src="{{ post.img }}" alt="{{ post.title }}">
-    <h2>{{ post.title }}</h2>
-    <p>Author: {{ post.autor }}</p>
-    <p>{{ post.text }}</p>
+    <div class="text">
+      <h2>{{ post.title }}</h2>
+      <p class="p1">Author: {{ post.autor }}</p>
+      <p class="p2">{{ post.text }}</p>
+    </div>
   </div>
+
 </ion-content>
